@@ -1,5 +1,6 @@
 # gazoubbsfix
 GazouBBS (画像BBS) fixed for PHP 7.
+![Preview](preview.png)
 
 # Note:
 This was not translated to english. Every string and comment is in japanese. I suggest using DeepL and Google translate both at the same time to read comments/strings for the most accurate results (there are often multiple interpretations).
