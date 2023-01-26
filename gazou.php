@@ -25,27 +25,27 @@ if(phpversion()>="4.1.0"){
   $upfile=$_FILES["upfile"]["tmp_name"];
 }
 //----設定--------
-define(LOGFILE, 'imglog.log');		//ログファイル名
-define(IMG_DIR, 'img/');		//画像保存ディレクトリ。gazou.phpから見て
+define('LOGFILE', 'imglog.log');		//ログファイル名
+define('IMG_DIR', 'img/');		//画像保存ディレクトリ。gazou.phpから見て
 
-define(TITLE, '画像BBS');		//タイトル（<title>とTOP）
-define(HOME,  'http://php.s3.to');	//「ホーム」へのリンク
+define('TITLE', '画像BBS');		//タイトル（<title>とTOP）
+define('HOME',  'http://php.s3.to');	//「ホーム」へのリンク
 
-define(MAX_KB, '100');			//投稿容量制限 KB（phpの設定により2Mまで
-define(MAX_W,  '250');			//投稿サイズ幅（これ以上はwidthを縮小
-define(MAX_H,  '250');			//投稿サイズ高さ
+define('MAX_KB', '100');			//投稿容量制限 KB（phpの設定により2Mまで
+define('MAX_W',  '250');			//投稿サイズ幅（これ以上はwidthを縮小
+define('MAX_H',  '250');			//投稿サイズ高さ
 
-define(PAGE_DEF, '7');			//一ページに表示する記事
-define(LOG_MAX,  '200');		//ログ最大行数
+define('PAGE_DEF', '7');			//一ページに表示する記事
+define('LOG_MAX',  '200');		//ログ最大行数
 
-define(ADMIN_PASS, '0123');		//管理者パス
-define(CHECK, 0);			//管理者がチェックしてから画像表示？yes=1
-define(SOON_ICON, '/soon.jpg');		//チェック中の時の代替画像
-define(RE_COL, '789922');               //＞が付いた時の色
+define('ADMIN_PASS', '0123');		//管理者パス
+define('CHECK', 0);			//管理者がチェックしてから画像表示？yes=1
+define('SOON_ICON', '/soon.jpg');		//チェック中の時の代替画像
+define('RE_COL', '789922');               //＞が付いた時の色
 
-define(NIKKI, 0);			//投稿フォームを表示しない？ Yes=1 No=0
+define('NIKKI', 0);			//投稿フォームを表示しない？ Yes=1 No=0
 
-define(PHP_SELF, "gazou.php");		//このスクリプト名;
+define('PHP_SELF', "gazou.php");		//このスクリプト名;
 
 
 //画像保存絶対パス $path="/home/public_html/***/img/";
@@ -464,7 +464,7 @@ function admindel($delno,$chkno,$pass){
     // 画像があるときはリンク
     if($ext && is_file($path.$time.$ext)){
       $img_flag = TRUE;
-      $clip = "<a href=\".".IMG_DIR.$time.$ext."\" target=_blank>".$time.$ext."</a>";
+      $clip = "<a href=\"".IMG_DIR.$time.$ext."\" target=_blank>".$time.$ext."</a>";
       $size = filesize($path.$time.$ext);
       $all += $size;			//合計計算
     }else{
